@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="muhaki.css" />
+    <title>متجر مُحاكي</title>
+    <style>
+      .blogo {
+        width: 100px; /* or any size you prefer */
+        height: auto;
+      }
+    </style>
+   <!-- <style>-->
+   <!-- body { font-family: sans-serif; background: #f9f9f9; margin: 0; padding: 20px; }-->
+   <!-- .product { border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; border-radius: 8px; background: #fff; }-->
+    <!--.stock { font-size: 14px; margin-top: 8px; }-->
+    <!-- .stock.out { color: red; }-->
+    <!--.floatingCartBtn { position: fixed; bottom: 20px; right: 20px; background: #222; color: #fff; padding: 12px 16px; border-radius: 50px; cursor: pointer; }-->
+    <!-- #cartSidebar { position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background: #fff; border-left: 1px solid #ccc; padding: 20px; overflow-y: auto; transition: right 0.3s ease; }-->
+    <!-- #cartSidebar.open { right: 0; }-->
+    <!-- .cartItem { border-bottom: 1px solid #eee; margin-bottom: 10px; padding-bottom: 10px; }-->
+  </style>
+  </head>
+  <!-- <button id="langToggle">English</button>-->
+
+  <body>
+    <div class="container"></div>
+    <header>
+      <img src="assets/wlogo.png" alt="muhaki logo" class="logo" />
+
+      <nav class="navigation">
+        <ul>
+          <li><a href="#aboutMe">About Muhaki</a></li>
+          <li><a href="#Available">Available</a></li>
+          <li><a href="#contactMe">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+   <!-- زر الكارت العائم -->
+   <button onclick="toggleSidebar()" class="floatingCartBtn">  
+    🛒 <span id="cartCount">0</span>  
+  </button>
+  
+<!-- Sidebar -->
+<div id="cartSidebar" class="cartSidebar">
+  <div class="sidebarHeader">
+    <h2>🛒 Your Cart</h2>
+    <button onclick="closeSidebar()" class="closeSidebarBtn">&times;</button>
+  </div>
+  <ul id="cartItems"></ul>
+
+  <div id="deliveryOptions" style="margin: 1rem 0;">
+    <h3>Delivery Options:</h3>
+    <label><input type="radio" name="delivery" value="2" checked> Deliver to Home (+2 OMR)</label><br/>
+    <label><input type="radio" name="delivery" value="1"> Shop Pickup (+1 OMR)</label><br/>
+    <label><input type="radio" name="delivery" value="0"> Collected from Almawaleh south جنوب الموالح (Free)</label>    
+  </div>
+
+  <p id="cartTotal"></p>
+
+  <button onclick="sendCartToWhatsApp()" class="whatsappBtn">Send to WhatsApp</button>
+  <button onclick="clearCart()" class="clearBtn">Clear Cart</button>
+</div>
+    <hr />
+
+    <section class="hero">
+      <img class="arrow" src="assetss/svg/arrow.svg" alt="arrow" />
+      <div class="heroSub">
+        <h1 class="name">iSbX</h1>
+        <h1 class="title">alomani</h1>
+        <div class="heroBtns">
+          <a class="hireMe" href="#contactMe"> تواصل</a>
+          </a>
+        </div>
+      </div>
+      <img src="assets/mtjr.JPEG" alt="mtjr image" class="mtjr" />
+    </section>
+
+    <section class="works" id="MyWorks">  
+      <div class="worksContainer">   
+        <div class="projectTitle"> 
+          <h1 class="SectionTitle">
+            <span class="en">Available</span> <span class="ar">متوفر</span>
+          </h1>
+          
+          <h1 class="aboutTitle"></h1> 
+        </div> 
+        <ul class="productGrid">
+          <li>
+            <img src="assets/glass.PNG" alt="زينة'" />
+          </li>
+          <li>
+            <img src="assets/whitemousepad.JPG" alt="White Mousepad" />
+            <p class="price">12.5 OMR</p>
+            <button onclick="addToCart('White glass Mousepad', 12.5)">Add to Cart</button>
+            <div class="stock" data-product="White glass Mousepad">Only 5 pieces available</div>
+          </li>
+          <li>
+            <img src="assets/blackmousepad.JPG" alt="Black Mousepad" />
+            <p class="price">12.5 OMR</p>
+            <button onclick="addToCart('Black glass Mousepad', 12.5)">Add to Cart</button>
+            <p class="stock" data-product="Black glass Mousepad">Only 5 pieces available</p>
+          </li>
+          <li>
+            <img src="assets/gmp.JPG" alt="Gray Mousepad" />
+            <p class="price">4 OMR</p>
+            <button onclick="addToCart('Gray Mousepad',4.0)">Add to Cart</button>
+            <p class="stock" data-product="Gray Mousepad">Only 5 pieces available</p>
+          </li>
+          <li>
+            <img src="assets/dgmp.JPG" alt="Dark Gray Mousepad" />
+            <p class="price">4 OMR</p>
+            <button onclick="addToCart('Dark Gray Mousepad', 4.0)">Add to Cart</button>
+            <p class="stock" data-product="Dark Gray Mousepad">Only 5 pieces available</p>
+          </li>
+          <li>
+            <img src="assets/bmp.JPG" alt="Black Mousepad" />
+            <p class="price">4 OMR</p>
+            <button onclick="addToCart('Black Mousepad', 4.0)">Add to Cart</button>
+            <p class="stock" data-product="Black Mousepad">Only 5 pieces available</p>
+          </li>
+         <!-- <li>
+            <img src="" alt="soon!" />
+            <p class="price">15.000 OMR</p>
+            <button onclick="addToCart('Glass Mousepad', 15.0)"></button>
+          </li>
+          <li>
+            <img src="" alt="Soon!!" />
+            <p class="price">15.000 OMR</p>
+            <button onclick="addToCart('Glass Mousepad', 15.0)"></button>
+          </li>
+          <li>
+            <img src="" alt="soon!!!" />
+            <p class="price">15.000 OMR</p>
+            <button onclick="addToCart('Glass Mousepad', 15.0)"></button>
+          </li>-->
+        </ul>
+        <section class="aboutMe" id="aboutMe">
+          <img
+            src="assets/glass.PNG"
+            alt="glass"
+            class="glass"
+          />
+          <div class="textContainer">
+            <div class="textTitle">
+              <h1 class="aboutName">About</h1>
+              <h1 class="aboutTitle">Muhaki</h1>
+              <img src="assets/blogo.png" alt="blogo" class="blogo" />
+            </div>
+            <p class="aboutMePar"><b>
+              متجر مُحاكي هو متجر إلكتروني عُماني 💯 يقدّم منتجات مميزة بجودة عالية.
+    
+              نبدأ أولى خطواتنا بمنتجنا الحصري: الماوس باد الزجاجي – المصمم خصيصًا لعشاق الألعاب والعمل الاحترافي، والذي يجمع بين الانزلاق السلس والتصميم الأنيق.
+              
+              نسعى لتقديم تجربة تسوق فريدة من نوعها داخل سلطنة عُمان، مع خدمة عملاء موثوقة وتوصيل سريع.</b>
+            </p>
+          </div>
+        </section>
+        <!-- Cart Button -->
+        <!--<div id="cartModal" class="cartModal">-->
+        <!--<button onclick="showCart()" class="viewCartBtn">🛒 View Cart</button>-->
+        <!-- Cart Modal -->
+        <!--<div id="cartModal" class="cartModal">
+          <div class="cartContent">
+            <button onclick="sendCartToWhatsApp()" class="whatsappBtn">Send to WhatsApp</button>
+            <h2>🛒 Your Cart</h2>
+            <ul id="cartItems"></ul>
+            <div id="deliveryOptions" style="margin-bottom: 1rem;">
+              <h3>Delivery Options:</h3>
+              <label><input type="radio" name="delivery" value="2" checked> Deliver to Home (+2 OMR)</label><br/>
+              <label><input type="radio" name="delivery" value="1"> Shop Pickup (+1 OMR)</label><br/>
+              <label><input type="radio" name="delivery" value="0"> Collected from Home (Free)</label>
+            </div>              
+            <p id="cartTotal"></p>
+            <button onclick="clearCart()" class="clearBtn">Clear Cart</button>
+            <button onclick="closeCart()" class="closeBtn">Close</button>
+          </div>
+        </div>-->
+         
+    </section>
+    
+    
+
+    <section class="contactContainer" id="contactMe">
+      <div class="contactTitle">
+        <h1 class="aboutName">Contact</h1>
+        <h1 class="aboutTitle">me</h1>
+      </div>
+      <div class="contact">
+        <div class="emailAndPhone">
+          <img src="assetss/svg/Email.svg" alt="email logo" />
+          <a href="mailto:mtjr.ayyy@gmail.com"
+            ><h3>mtjr.ayyy@gmail.com</h3></a
+          >
+        </div>
+        <div class="emailAndPhone">
+          <img src="assetss/svg/phone.svg" alt="phone logo" />
+          <a href="https://wa.me/96876909888" target="_blank">
+            <h3>+968 76909888</h3>
+          </a>
+        </div>        
+      </div>
+      <div class="socialMedia">
+        <a href="https://github.com/MusaabK99" target="_blank"
+        ><img src="assetss/svg/github.svg" alt=" my github account"
+        /></a>
+        <a href="https://www.youtube.com/@aYyY-500" target="_blank"
+          ><img src="assetss/svg/youtube.svg" alt="my youtube channel"
+        /></a>
+        <a href="https://www.youtube.com/@%D9%85%D8%AD%D8%A7%D9%83%D9%8A2" target="_blank"
+          ><img src="assetss/svg/youtube.svg" alt="my youtube channel"
+        /></a>
+        <a href="https://www.youtube.com/@Ibrahim_Alyahyaey" target="_blank"
+          ><img src="assetss/svg/youtube.svg" alt="my youtube channel"
+        /></a>
+        <a href="https://www.youtube.com/@ibrahimaYyY" target="_blank"
+          ><img src="assetss/svg/youtube.svg" alt="my youtube channel"
+        /></a>
+        <a href="https://www.youtube.com/@IbrahimaYyY1" target="_blank"
+          ><img src="assetss/svg/youtube.svg" alt="my youtube channel"
+        /></a>
+        <a href="https://www.youtube.com/@aYyYTeCH" target="_blank"
+          ><img src="assetss/svg/youtube.svg" alt="my youtube channel"
+        /></a>
+        <a href="https://www.youtube.com/@cj-ayyy" target="_blank"
+        ><img src="assetss/svg/youtube.svg" alt="my youtube channel"
+      /></a>
+      <a href="https://www.youtube.com/@aYyYDev" target="_blank"
+      ><img src="assetss/svg/youtube.svg" alt="my youtube channel"
+    /></a>
+    <a href="https://paypal.me/IbrahimAlyahyaey?country.x=OM&locale.x=en_US" target="_blank"
+      ><img src="assetss/svg/pp.svg" alt="my youtube channel"
+    /></a>
+      </div>
+    </section>
+    <hr />
+    <footer>
+     <p>Built by iSbX alomani | متجر مُحاكي © 2025</p>
+    </footer>
+    <script src="muhaki.js" defer></script>
+  </body>
+</html>

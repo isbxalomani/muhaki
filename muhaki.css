@@ -1,0 +1,740 @@
+/* ====== Fonts & Reset ====== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", serif;
+}
+.logo {
+  width: 100px;
+  height: 100px; /* تخلي العرض والارتفاع متساويين */
+  border-radius: 50%; /* يخلي الصورة دائرية */
+  object-fit: cover; /* يقص الصورة بطريقة مناسبة داخل الدائرة */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.6);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  direction: rtl; /* This puts logo on the right and nav on the left */
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+
+
+body {
+  background-color: #04355b;
+}
+
+/* ====== Header ====== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.navigation ul {
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #eeeeee;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #00adb5;
+}
+
+hr {
+  opacity: 10%;
+}
+
+/* ====== Hero Section ====== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem auto;
+  max-width: 1200px;
+  position: relative;
+}
+
+.mtjr {
+  display: block;
+  width: 500px;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 100px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mtjr:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.glass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem auto;
+  max-width: 600px;
+}
+
+.arrow {
+  position: absolute;
+  transform: translateX(-5.5rem) translateY(1.5rem);
+}
+
+.heroSub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.name {
+  font-size: 3rem;
+  color: #eeeeee;
+}
+
+.title {
+  font-size: 4rem;
+  color: #00adb5;
+}
+
+.heroBtns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hireMe {
+  background-color: #00adb5;
+  color: #eeeeee;
+  border-radius: 24px;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ====== About Me Section ====== */
+.aboutMe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem auto;
+  max-width: 1200px;
+  gap: 10rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.textTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 2rem;
+}
+
+.aboutName {
+  color: #eeeeee;
+}
+
+.aboutTitle {
+  color: #00adb5;
+}
+
+.aboutMeParagraf {
+  text-align: justify;
+  color: rgba(238, 238, 238, 0.75);
+}
+
+/* ====== Works Section ====== */
+.works {
+  background-image: url("");
+  padding: 10rem 10rem;
+  margin: 5rem 0rem;
+}
+
+.worksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 5rem auto;
+  max-width: 1200px;
+}
+
+.projectTitle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* shift to the right */
+  gap: 5px;
+  font-size: 2rem;
+}
+.SectionTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white; /* اللون أبيض */
+  padding: 0.3rem 1rem; /* مساحة داخلية عشان الإطار ما يلتصق بالكلام */
+  display: inline-block; /* عشان الإطار يلتف حول النص فقط */
+  border-radius: 5px; /* تعطيه حواف دائرية بسيطة (اختياري) */
+  background-color: transparent; /* خلفية شفافة */
+  -webkit-text-stroke:2px black; /* حدود الحروف بسُمك 1 بكسل باللون الأسود */
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-align: right;
+  padding-right: 20px; /* يمكنك زيادة الرقم حسب المسافة المطلوبة */
+  margin-left: auto;  /* يجعل العنصر يبتعد عن اليسار */
+  margin-right: 0;    /* ويقربه من اليمين */
+  display: block;
+  width: fit-content; /* عشان حجم العنصر يحسب نفسه فقط */
+}
+.SectionTitle {
+  text-align: center;
+  font-size: 80px; /* أو أي حجم تريده */
+  color: rgb(255, 255, 255);    /* أو أي لون */
+}
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.SectionTitle {
+  transform: translateX(200px); /* يدفع العنوان نحو اليمين */ 
+}
+.SectionTitle {
+  text-align: center;
+  font-size: 24px;
+}
+
+.SectionTitle .en {
+  margin-right: 100px; /* المسافة بين Available و متوفر */
+}
+
+.SectionTitle .ar {
+  font-family: 'cairo', sans-serif; /* أو أي خط عربي */
+}
+.SectionTitle {
+  text-align: center;
+  font-size: 90px; /* حجم أكبر */
+  font-weight: bold;
+  letter-spacing: 2px; /* زيادة تباعد الحروف */
+}
+.en {
+  font-family: 'Poppins', sans-serif;
+}
+
+.ar {
+  font-family: 'cairo', sans-serif;
+}
+
+
+.header-container {
+  display: flex;
+}
+
+
+
+
+.works ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
+  gap: 2rem; /* space between items */
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 960px; /* optional: to center and limit total width */
+}
+
+
+
+.works li {
+  background-color: rgba(57, 62, 70, 0.5);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.works li:hover {
+  transform: scale(1.2);
+}
+
+.works li img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.works li img:hover {
+  transform: scale(1.1);/*images */
+  transition: transform 0.3s ease;
+}
+
+
+/* ====== Contact Section ====== */
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.contactTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5rem;
+  gap: 20rem;
+}
+
+.contact h3,
+.contact a {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+.emailAndPhone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.socialMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.socialMedia a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: rgba(57, 62, 70, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+}
+
+.socialMedia img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ====== Footer ====== */
+footer {
+  color: #eeeeee;
+  padding: 2rem;
+  text-align: center;
+}
+/* ====== Floating Cart Button ====== */
+.floatingCartBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  background-color: #00adb5;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.floatingCartBtn:hover {
+  background-color: #009aa5;
+}
+
+.floatingCartBtn #cartCount {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* ====== Cart Sidebar ====== */
+.cartSidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0; /* فتح من اليمين */
+  background-color: #0d51516a;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding: 20px;
+  z-index: 1000;
+  direction: ltr; /* اتجاه المحتوى */
+}
+
+.cartSidebar.open {
+  width: 320px;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closeSidebarBtn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cartSidebar ul {
+  list-style: none;
+  margin-top: 1rem;
+  padding-left: 0;
+}
+
+.cartSidebar ul li {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.cartSidebar button {
+  margin-left: 8px;
+  background-color: #00adb5;
+  border: none;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.cartSidebar button:hover {
+  background-color: #009aa5;
+}
+
+.whatsappBtn,
+.clearBtn {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.whatsappBtn {
+  background-color: #25d366;
+  color: white;
+}
+
+.whatsappBtn:hover {
+  background-color: #1da851;
+}
+
+.clearBtn {
+  background-color: #ff4444;
+  color: white;
+}
+
+.clearBtn:hover {
+  background-color: #cc0000;
+}
+
+
+.added-animation {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+    background-color: #00adb5;
+  }
+  50% {
+    transform: scale(1.2);
+    background-color: #32e0c4;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #00adb5;
+  }
+}
+.floatingCartBtn.bump {
+  animation: cart-bump 0.4s ease;
+}
+
+@keyframes cart-bump {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.3);
+  }
+  60% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.stock {
+  color: #2ecc71; /* Green by default */
+  font-weight: bold;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.stock.out {
+  color: #e74c3c; /* Red when out of stock */
+}
+.aboutMePar {
+  color: #fff; /* or any color you want */
+  text-shadow: 0 0 8px #00f6ff, 0 0 12px #00f6ff, 0 0 16px #00f6ff;
+  font-weight: bold;
+}
+@media (max-width: 1023px) {
+  /* Header */
+  header {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .mtjr {
+    width: 400px;
+  }
+
+  .name,
+  .title {
+    font-size: 2rem;
+    transform: translateX(-5.5rem) translateY(1.5rem);
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  /* About Me Section */
+  .aboutMe {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .textContainer {
+    align-items: center;
+    margin: 0rem 5rem;
+    gap: 1rem;
+  }
+
+  .aboutName,
+  .aboutTitle {
+    font-size: 2rem;
+  }
+
+  .blogo {
+    width: 60px;
+  }
+
+  .aboutMeImg {
+    width: 400px;
+  }
+
+  /* Works Section */
+  .works {
+    padding: 0;
+  }
+
+  .worksContainer {
+    padding: 5rem 0rem;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projectTitle {
+    margin-left: 1rem;
+  }
+
+  .works ul {
+    /* Change from grid to flex for smaller screens */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .SectionTitle {
+    padding: 0;
+  }
+
+  /* Contact Section */
+  .contactContainer {
+    margin: 10rem 5rem;
+    gap: 2rem;
+  }
+
+  .contact {
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 0;
+  }
+
+  .glass {
+    width: 400px;
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+    transform: translateX(-32px); /* move slightly to the left */
+  }
+
+  /* 600px-specific styles (included inside this 1023px block) */
+
+  /* Header adjustments for smaller screens */
+  header {
+    flex-direction: column;
+    align-items: center;
+    direction: ltr; /* Reset to normal on small screens if needed */
+  }
+
+  /* Navigation */
+  .navigation ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* Section title */
+  .SectionTitle {
+    font-size: 3.5rem;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    transform: translateX(50px); /* Shift slightly left */
+  }
+
+  /* Floating Cart Button */
+  .floatingCartBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 70px;
+    background: #ff5252;
+    color: #fff;
+    padding: 14px 16px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Cart count badge */
+  #cartCount {
+    background: white;
+    color: black;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 999px;
+    margin-left: 4px;
+  }
+}
+.socialMedia {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* center horizontally */
+  gap: 12px;                /* space between icons */
+  padding: 1rem 0;
+}
+
+.socialMedia a {
+  flex: 0 1 48px;           /* icon links take up about 48px width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialMedia img {
+  width: 32px;              /* size of each icon */
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Optional: add a hover effect for touch devices */
+.socialMedia a:hover img {
+  transform: scale(1.2);
+}
