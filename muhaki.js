@@ -3,7 +3,7 @@ const stockLimits = {
   "Black glass Mousepad": 5,
   "white Mousepad": 5,
   "Gray Mousepad": 5,
-  "Black Mousepad": 5,
+  "Black Mousepad": 10,
 };
 // Initialize cart from localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
