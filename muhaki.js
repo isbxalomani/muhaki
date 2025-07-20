@@ -1,8 +1,8 @@
 const stockLimits = {
   "White glass Mousepad": 5,
   "Black glass Mousepad": 5,
+  "white Mousepad": 5,
   "Gray Mousepad": 5,
-  "Dark Gray Mousepad": 5,
   "Black Mousepad": 5,
 };
 // Initialize cart from localStorage
