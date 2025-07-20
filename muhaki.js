@@ -1,5 +1,5 @@
 const stockLimits = {
-  "White glass Mousepad": 5,
+  "White glass Mousepad": 10,
   "Black glass Mousepad": 5,
   "white Mousepad": 5,
   "Gray Mousepad": 5,
