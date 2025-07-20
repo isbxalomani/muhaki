@@ -580,16 +580,26 @@ footer {
     align-items: center;
     gap: 2rem;
   }
+  .heroBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; /* optional spacing */
+  }
+  
 
   .mtjr {
     width: 400px;
   }
 
-  .name,
-  .title {
-    font-size: 2rem;
-    transform: translateX(-5.5rem) translateY(1.5rem);
-  }
+  .name, 
+.title {
+  font-size: 2rem;
+  text-align: center;
+  transform: none; /* Remove offset */
+  width: 100%;
+}
+
 
   .arrow {
     display: none;
@@ -749,4 +759,15 @@ footer {
 /* Optional: add a hover effect for touch devices */
 .socialMedia a:hover img {
   transform: scale(1.2);
+}
+.productName {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 5px #000000,
+               0 0 1px #0ff,
+               0 0 1px #0ff,
+               0 0 1px #0ff;
+  margin-bottom: 8px;
 }
