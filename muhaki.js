@@ -147,7 +147,7 @@ function getSelectedDeliveryText() {
       switch (radio.value) {
         case '2': return "Deliver to Home (+2 OMR)";
         case '1': return "Shop Pickup (+1 OMR)";
-        case '0': return "Collected from Almawaleh south جنوب الموالح (Free)";
+        case '0': return "Collected from Almawaleh south الموالح الجنوبية (Free)";
       }
     }
   }
